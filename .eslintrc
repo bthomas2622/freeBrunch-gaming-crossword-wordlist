@@ -1,0 +1,12 @@
+{
+  "extends": "eslint",
+  "rules": {
+      "no-console": "off",
+      "indent": ["error", 2],
+      "jsdoc/newline-after-description": "off"
+  },
+  "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+  }
+}
