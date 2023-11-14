@@ -1,11 +1,11 @@
-const fs = require('fs');
+import { readdirSync, readFile } from 'fs';
 
 const wordlistsFilePath = '/category-wordlists'
-const wordlists = fs.readdirSync(__dirname + `/..${wordlistsFilePath}`);
+const wordlists = readdirSync(__dirname + `/..${wordlistsFilePath}`);
 const platform = process.argv[2];
 
 for (let wordlist of wordlists) {
-  fs.readFile(__dirname + `/..${wordlistsFilePath}/` + wordlist, 'utf8', (err, data) => {
+  readFile(__dirname + `/..${wordlistsFilePath}/` + wordlist, 'utf8', (err, data) => {
     if (err) throw err;
     const words = platform === 'linux' ? data.split('\n') : data.split('\r\n');
     const wordOccurrences = {};
