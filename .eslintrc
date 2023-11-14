@@ -1,12 +1,15 @@
 {
-  "extends": "eslint",
+  "extends": "eslint:recommended",
+  "env": {
+    "node": true,
+    "es2024": true
+  },
   "rules": {
       "no-console": "off",
       "indent": ["error", 2],
       "jsdoc/newline-after-description": "off"
   },
   "parserOptions": {
-      "ecmaVersion": "latest",
       "sourceType": "module"
   }
 }

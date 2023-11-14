@@ -2,7 +2,7 @@
   "name": "freebrunch-gaming-crossword-wordlist",
   "version": "1.0.0",
   "engines": {
-    "node": ">=v18.12.0"
+    "node": ">=v21.1.0"
   },
   "description": "Crossword wordlist of video game related words",
   "scripts": {
