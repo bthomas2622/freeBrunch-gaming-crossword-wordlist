@@ -1,6 +1,7 @@
 {
   "name": "freebrunch-gaming-crossword-wordlist",
   "version": "1.0.0",
+  "type": "module",
   "engines": {
     "node": ">=v21.1.0"
   },
