@@ -1,0 +1,23 @@
+{
+  "name": "freebrunch-gaming-crossword-wordlist",
+  "version": "1.0.0",
+  "description": "Crossword wordlist of video game related words",
+  "scripts": {
+    "test": "node test_wordlist.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bthomas2622/freeBrunch-gaming-crossword-wordlist.git"
+  },
+  "keywords": [
+    "crossword",
+    "wordlist",
+    "gaming"
+  ],
+  "author": "Ben Thomas (freeBrunch)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bthomas2622/freeBrunch-gaming-crossword-wordlist/issues"
+  },
+  "homepage": "https://github.com/bthomas2622/freeBrunch-gaming-crossword-wordlist#readme"
+}
