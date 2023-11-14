@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Crossword wordlist of video game related words",
   "scripts": {
-    "test": "node test_wordlist.js"
+    "test": "node tests/test_wordlist.js"
   },
   "repository": {
     "type": "git",

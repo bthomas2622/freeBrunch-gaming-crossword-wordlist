@@ -1,8 +1,8 @@
 const fs = require('fs');
 
-fs.readFile('freeBrunch_gaming_wordlist.txt', 'utf8', (err, data) => {
+fs.readFile(__dirname + '/../freeBrunch_gaming_wordlist.txt', 'utf8', (err, data) => {
   if (err) throw err;
-  const words = data.split('\n');
+  const words = data.split('\r\n');
   const wordOccurrences = {};
   let duplicateCount = 0;
   let nonUppercaseCount = 0;
