@@ -17,4 +17,6 @@ wordlists.forEach(wordlist => {
   });
 });
 
-writeFileSync(__dirname + '/../freeBrunch_all_gaming_wordlist.txt', Array.from(allWords).join('\n'));
+writeFileSync(__dirname + '/../freeBrunch_all_gaming_wordlist.txt', Array.from(allWords).sort().join('\n').slice(0, -1));
+
+console.log('All wordlists combined and alphabetized into freeBrunch_all_gaming_wordlist.txt');

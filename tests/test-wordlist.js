@@ -17,7 +17,16 @@ for (let wordlist of wordlists) {
     let duplicateCount = 0;
     let nonUppercaseCount = 0;
     let nonLetterCount = 0;
-    for (let word of words) {
+    let prevWord = 'A';
+    for (let word of words) {   
+      if (word.localeCompare(prevWord) < 0) {
+        console.log(word.localeCompare(prevWord));
+        console.log(`${wordlist} Test FAILED\nWords not alphabetized please run npm run sort\n${word} comes before ${prevWord}`);
+        throw new Error(`${wordlist} Test failed.`);
+      }
+      else {
+        prevWord = word;
+      }
       if (wordOccurrences[word]) {
         console.log(`Duplicate word found: ${word}`);
         duplicateCount++;
@@ -36,8 +45,9 @@ for (let wordlist of wordlists) {
     if (duplicateCount > 0 || nonUppercaseCount > 0 || nonLetterCount > 0) {
       console.log(`${wordlist} Test FAILED\n${duplicateCount} duplicate words, ${nonUppercaseCount} non-uppercase words, and ${nonLetterCount} words with numbers/symbols found.`);
       throw new Error(`${wordlist} Test failed.`);
-    } else {
-      console.log(`${wordlist} Test PASSED!\nNo duplicate words, non-uppercase words, or words with numbers/symbols found.`);
+    }
+    else {
+      console.log(`${wordlist} Test PASSED!\nNo duplicate words, non-uppercase words, or words with numbers/symbols found. Wordlist is alphabetized.`);
     }
   });
 }
