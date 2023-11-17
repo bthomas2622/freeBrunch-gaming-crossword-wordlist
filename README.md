@@ -8,4 +8,5 @@ Contributions welcome! Please submit a pull request with your additions to the [
 
 `npm run test` ensures there are no duplicates, lowercase words, or words with special characters found in the lists.
 `npm run test-windows` will run the above test on Windows machines.
-`npm run compile-wordlists` will compile the category wordlists into the `freeBrunch_all_gaming_wordlist.txt` file.
+`npm run sort` will sort the category wordlists alphabetically.
+`npm run compile` will compile the category wordlists into the `freeBrunch_all_gaming_wordlist.txt` file.
