@@ -14,7 +14,7 @@ for (let wordlist of wordlists) {
 
     const rows = data.split('\n');
     const sortedRows = rows.sort();
-    const sortedData = sortedRows.join('\n').slice(0, -1);
+    const sortedData = sortedRows.join('\n');
 
     writeFile(__dirname + `/..${wordlistsFilePath}/${wordlist}`, sortedData, 'utf8', (err) => {
       if (err) throw err;
