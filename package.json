@@ -8,7 +8,7 @@
   "description": "Crossword wordlist of video game related words",
   "scripts": {
     "compile": "node scripts/compile-wordlists.js",
-    "sort": "node scripts/alphabetize-wordlists.js",
+    "format": "node scripts/format-wordlists.js",
     "test": "node tests/test-wordlist.js linux",
     "test-windows": "node tests/test-wordlist.js windows",
     "lint": "eslint --fix --ext .js,.jsx ."

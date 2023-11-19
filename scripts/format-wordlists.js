@@ -14,11 +14,14 @@ for (let wordlist of wordlists) {
 
     const rows = data.split('\n');
     const sortedRows = rows.sort();
+    for (let i = 0; i < sortedRows.length; i++) {
+      sortedRows[i] = sortedRows[i].toUpperCase();
+    }
     const sortedData = sortedRows.join('\n');
 
     writeFile(__dirname + `/..${wordlistsFilePath}/${wordlist}`, sortedData, 'utf8', (err) => {
       if (err) throw err;
-      console.log(`Alphabetized ${wordlist}`);
+      console.log(`Alphabetized/uppercased ${wordlist}`);
     });
   });
 }
