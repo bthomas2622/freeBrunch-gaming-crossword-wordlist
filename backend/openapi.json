@@ -1,0 +1,214 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "freeBrunch Gaming Crossword Wordlist API",
+    "version": "1.0.0",
+    "description": "A read-only local API for the categorized freeBrunch gaming crossword wordlists."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Local development server"
+    }
+  ],
+  "paths": {
+    "/categories": {
+      "get": {
+        "summary": "List wordlist categories",
+        "operationId": "listCategories",
+        "responses": {
+          "200": {
+            "description": "Available categories and their word counts.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CategoryList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/categories/{category}/words": {
+      "get": {
+        "summary": "Get words in a category",
+        "operationId": "listCategoryWords",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Category"
+          },
+          {
+            "$ref": "#/components/parameters/StartsWith"
+          },
+          {
+            "$ref": "#/components/parameters/Length"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The category's words after optional filters are applied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WordList"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/InvalidRequest"
+          },
+          "404": {
+            "$ref": "#/components/responses/CategoryNotFound"
+          }
+        }
+      }
+    },
+    "/spec": {
+      "get": {
+        "summary": "Get this OpenAPI specification",
+        "operationId": "getSpecification",
+        "responses": {
+          "200": {
+            "description": "The OpenAPI 3.0 document.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "Category": {
+        "name": "category",
+        "in": "path",
+        "required": true,
+        "description": "Case-insensitive category identifier, such as `characters`, `games`, or `terms`.",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "StartsWith": {
+        "name": "startsWith",
+        "in": "query",
+        "required": false,
+        "description": "Filter words to those beginning with this one letter. Case-insensitive.",
+        "schema": {
+          "type": "string",
+          "pattern": "^[A-Za-z]$",
+          "example": "A"
+        }
+      },
+      "Length": {
+        "name": "length",
+        "in": "query",
+        "required": false,
+        "description": "Filter words to the requested character length. May be combined with `startsWith`.",
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "example": 5
+        }
+      }
+    },
+    "schemas": {
+      "Category": {
+        "type": "object",
+        "required": [
+          "name",
+          "wordCount"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "characters"
+          },
+          "wordCount": {
+            "type": "integer",
+            "minimum": 0,
+            "example": 121
+          }
+        }
+      },
+      "CategoryList": {
+        "type": "object",
+        "required": [
+          "categories"
+        ],
+        "properties": {
+          "categories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Category"
+            }
+          }
+        }
+      },
+      "WordList": {
+        "type": "object",
+        "required": [
+          "category",
+          "words"
+        ],
+        "properties": {
+          "category": {
+            "type": "string",
+            "example": "characters"
+          },
+          "words": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Z]+$"
+            }
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "required": [
+          "error",
+          "message"
+        ],
+        "properties": {
+          "error": {
+            "type": "string",
+            "example": "invalid_request"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "responses": {
+      "InvalidRequest": {
+        "description": "A query parameter is invalid.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "CategoryNotFound": {
+        "description": "No category matches the requested identifier.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      }
+    }
+  }
+}

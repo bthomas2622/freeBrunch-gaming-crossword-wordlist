@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "skills": {
+    "edit-page-content": {
+      "source": "readmeio/agent-plugins",
+      "sourceType": "github",
+      "skillPath": "skills/edit-page-content/SKILL.md",
+      "computedHash": "3d16e13fa0ec4dfb415bda2a4c75be1ade48b1b077526cb40864f8d0ceaf6c0f"
+    },
+    "manage-navigation": {
+      "source": "readmeio/agent-plugins",
+      "sourceType": "github",
+      "skillPath": "skills/manage-navigation/SKILL.md",
+      "computedHash": "9414fb0939a95e5d7906b0751435912392ed7dca48d4b27dcc99b0753e2c45f9"
+    },
+    "managing-readme-docs": {
+      "source": "readmeio/agent-plugins",
+      "sourceType": "github",
+      "skillPath": "skills/managing-readme-docs/SKILL.md",
+      "computedHash": "0aecd687c367c5b1254df3e003824dfcb71f47d5e9685c3305f5dad53f42ddad"
+    },
+    "mcp-auth": {
+      "source": "readmeio/agent-plugins",
+      "sourceType": "github",
+      "skillPath": "skills/mcp-auth/SKILL.md",
+      "computedHash": "9a4bc36872c5924c5efcdf5fe49465061edb1529e7e3ce7fa38fc2686e223550"
+    },
+    "setup-project": {
+      "source": "readmeio/agent-plugins",
+      "sourceType": "github",
+      "skillPath": "skills/setup-project/SKILL.md",
+      "computedHash": "622fa578670d485b3a93a2d3cc9b81de34ad56bd549a83e11b4408beb07f8ece"
+    },
+    "update-project-settings": {
+      "source": "readmeio/agent-plugins",
+      "sourceType": "github",
+      "skillPath": "skills/update-project-settings/SKILL.md",
+      "computedHash": "70e6300fa388d2389bf527b9d0860718484ddefaac2a63195160431b15bb9adc"
+    }
+  }
+}
