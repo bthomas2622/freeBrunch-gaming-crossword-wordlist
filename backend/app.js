@@ -1,5 +1,6 @@
 import cors from 'cors';
 import express from 'express';
+import restless from '@restlessai/sdk';
 import swaggerUi from 'swagger-ui-express';
 import { readFileSync } from 'fs';
 import path from 'path';
@@ -31,7 +32,12 @@ export function createApp({
   specPath = defaultSpecPath
 } = {}) {
   const app = express();
+  const sdk = restless(process.env.RESTLESS_KEY);
 
+  app.use(sdk.setup(() => ({
+    apiKey: undefined,
+    owner: undefined
+  })));
   app.use(cors());
 
   app.get('/categories', (_request, response) => {

@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "apis": [
+    {
+      "name": "freeBrunch-gaming-crossword-wordlist",
+      "rootDir": ".",
+      "oasFile": ".restless\\openapi.json",
+      "oasSource": {
+        "kind": "agent"
+      },
+      "requestIdPrefix": "FRB",
+      "lastSyncedAt": "2026-10-26T23:16:31.129Z",
+      "id": "3db9fb3a-d0e0-4f06-abd0-58223abb6a78",
+      "projectId": "9dd6ce5a-846e-4dc1-9542-3076180e619f"
+    }
+  ]
+}

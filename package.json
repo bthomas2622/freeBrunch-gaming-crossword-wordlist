@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/bthomas2622/freeBrunch-gaming-crossword-wordlist#readme",
   "dependencies": {
+    "@restlessai/sdk": "^0.6.1",
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "swagger-ui-express": "^5.0.1"
